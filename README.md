@@ -20,6 +20,7 @@ Notes:
 - custom icons for slack and pia
 - screenshot utility is maim
 - date/time is clickable, shows gsimplecal (very similar to ubuntu)
+- some lines in i3 config for setting up natural scrolling for my laptop (near bottom)
 
 ![alt tag](./screenshots/Screenshot from 2016-12-22 18-43-59.png)
 ![alt tag](./screenshots/Screenshot from 2016-12-22 19-06-16.png)
