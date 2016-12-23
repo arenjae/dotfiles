@@ -1,5 +1,5 @@
 # dotfiles
-My i3-gaps congig. 
+My i3-gaps config. 
 Things I'm using:
 
 - Bar: i3bar with i3blocks
