@@ -12,6 +12,8 @@ Things I'm using:
 - notifications: dunst
 - calendar: gsimplecal
 - lock: i3-lock-colors
+- web-browser: chrome
+- file-browser: nautilus
 
 Notes:
 
