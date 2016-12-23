@@ -1,5 +1,5 @@
 # dotfiles
-My i3-gaps config. I'm using i3-gaps instead of i3 because i3-gaps supports transparency, which is something I wanted, especially for the i3bar.
+My i3-gaps config. I'm using i3-gaps instead of i3 because i3-gaps supports transparency, which is something I wanted, especially for the i3bar. My theme borrows heavily from [Airblader](https://github.com/Airblader/i3 "Airblader").
 Things I'm using:
 
 - Bar: i3bar with i3blocks
