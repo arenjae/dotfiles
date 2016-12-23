@@ -11,6 +11,7 @@ Things I'm using:
 - OS: Ubuntu
 - notifications: dunst
 - calendar: gsimplecal
+- lock: i3-lock-colors
 
 Notes:
 
