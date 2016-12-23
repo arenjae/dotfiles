@@ -1,0 +1,11 @@
+show_calendar=1
+mark_today=1
+show_week_numbers=0
+close_on_unfocus=1
+mainwindow_position=mouse
+mainwindow_xoffset=-0
+mainwindow_yoffset=0
+clock_format = %a %d %b %H:%M
+clock_label = Local
+clock_tz =
+mainwindow_decorated = 0

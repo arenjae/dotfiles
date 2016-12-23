@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Scroll up
+if [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
+  $HOME/.config/i3/scripts/shutdown.sh
+fi
+
+echo ""
+echo ""
+# echo "#FF0000"
+echo "#FF0000"
