@@ -7,7 +7,7 @@ Things I'm using:
 - font: font awesome, hack, and ubuntu
 - compositing: compton (added custom blur kernel)
 - d-menu: rofi
-- theme: dark-mono-red
+- theme: Ambiance-Blackout-Flat-Red-Pro
 - OS: Ubuntu
 - notifications: dunst
 - calendar: gsimplecal
