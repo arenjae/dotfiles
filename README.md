@@ -25,7 +25,7 @@ Notes:
 - date/time is clickable, shows gsimplecal (very similar to ubuntu)
 - some lines in i3 config for setting up natural scrolling for my laptop (near bottom)
 
-![alt tag](./screenshots/Screenshot from 2016-12-22 18-43-59.png)
-![alt tag](./screenshots/Screenshot from 2016-12-22 19-06-16.png)
-![alt tag](./screenshots/Screenshot from 2016-12-22 19-11-18.png)
+![alt tag](./screenshots/screen1.png)
+![alt tag](./screenshots/screen2.png)
+![alt tag](./screenshots/screen3.png)
 ![alt tag](./screenshots/screenshot-2016-12-19_23-44-38.png)
