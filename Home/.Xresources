@@ -1,32 +1,34 @@
-Xft.dpi: 96
+Xft.dpi: 180
 Xft.antialias: true
 Xft.hinting: true
-Xft.rgba: rgb
+Xft.rgba: rgba
 Xft.autohint: false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+! Xft.lcdfilter: lcddefault
 
 ! rofi
 rofi.modi: drun
-rofi.font: Hack 11
+rofi.font: Hack 20
 rofi.width: 1300
 rofi.lines: 10
 rofi.columns: 1
-rofi.opacity: 75
+! rofi.opacity: 75
 !                    bg       fg      altbg    hlbg     hlfg
 ! rofi.color-normal: #282828, #ebdbb2, #282828, #ebdbb2, #282828
 ! rofi.color-urgent: #282828, #ebdbb2, #282828, #ebdbb2, #282828
 ! rofi.color-active: #282828, #ebdbb2, #282828, #ebdbb2, #282828
 ! rofi.color-window: #282828, #282828
-rofi.color-normal: #151515, #ebdbb2, #151515, #ebdbb2, #151515
-rofi.color-urgent: #151515, #ebdbb2, #151515, #ebdbb2, #151515
-rofi.color-active: #151515, #ebdbb2, #151515, #ebdbb2, #151515
-rofi.color-window: #151515, #151515
+rofi.color-normal: #00151515, #ebdbb2, #00151515, #ebdbb2, #151515
+rofi.color-urgent: #00151515, #ebdbb2, #00151515, #ebdbb2, #151515
+rofi.color-active: #00151515, #ebdbb2, #00151515, #ebdbb2, #151515
+rofi.color-window: #c0151515, #c0151515
 rofi.bw: 0
 rofi.location: 0
 rofi.padding: 50
 rofi.fuzzy: true
 rofi.sidebar-mode: false
+rofi.separator-style: solid
+rofi.hide-scrollbar: true
 
 ! === gruvbox color scheme ===
 *background: #1d2021

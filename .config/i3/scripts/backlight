@@ -1,26 +1,29 @@
 #!/bin/bash
 
-# One of the following: xrandr, xbacklight, kernel
-METHOD="xbacklight"
+# One of the following: xrandr, acpilight, kernel
+METHOD="acpilight"
+TEST=$(acpilight -get)
+test2=$(echo "scale=0;${TEST}" | bc -l)
+test2=${test2%.*}
+URGENT_VALUE=9
 
-## Left click
-#if [[ "${BLOCK_BUTTON}" -eq 4 ]]; then
-#  xbacklight -inc 5
-## Right click
-#elif [[ "${BLOCK_BUTTON}" -eq 5 ]]; then
-#  xbacklight -dec 5
-#fi
+# Scroll up
+if [[ "${BLOCK_BUTTON}" -eq 4 ]]; then
+  if [[ "${test2}" -ge 10 ]]; then #prevents user from turning off screen on accident
+    acpilight -dec 5
+  fi
+#Scroll down
+elif [[ "${BLOCK_BUTTON}" -eq 5 ]]; then
+  acpilight -inc 5
+# Left click
+elif [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
+  acpilight -dec 1
+# Right click
+elif [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
+  acpilight -inc 1
+fi
 
 
-
-case "$BLOCK_BUTTON" in
-    4) xbacklight -inc 5 ;;
-    5) xbacklight -dec 5 ;;
-esac
-
-
-
-URGENT_VALUE=10
 
 if [[ "${METHOD}" = "xrandr" ]]; then
   device="${BLOCK_INSTANCE:-primary}"
@@ -35,8 +38,8 @@ elif [[ "${METHOD}" = "kernel" ]]; then
   device="${BLOCK_INSTANCE:-intel_backlight}"
   maxBrightness=$(cat /sys/class/backlight/${device}/max_brightness)
   curBrightness=$(cat /sys/class/backlight/${device}/brightness)
-elif [[ "${METHOD}" = "xbacklight" ]]; then
-  curBrightness=$(xbacklight -get)
+elif [[ "${METHOD}" = "acpilight" ]]; then
+  curBrightness=$(acpilight -get)
 fi
 
 if [[ "${curBrightness}" -le 0 ]]; then
@@ -47,7 +50,7 @@ if [[ "${METHOD}" = "xrandr" ]]; then
   percent=$(echo "scale=0;${curBrightness} * 100" | bc -l)
 elif [[ "${METHOD}" = "kernel" ]]; then
   percent=$(echo "scale=0;${curBrightness} / ${maxBrightness} * 100" | bc -l)
-elif [[ "${METHOD}" = "xbacklight" ]]; then
+elif [[ "${METHOD}" = "acpilight" ]]; then
   percent=$(echo "scale=0;${curBrightness}" | bc -l)
 fi
 
@@ -57,8 +60,8 @@ if [[ "${percent}" -le 0 ]]; then
   exit
 fi
 
-echo "${percent}%"
-echo "${percent}%"
+echo "${percent}"
+echo "${percent}"
 echo ""
 
 if [[ "${percent}" -le "${URGENT_VALUE}" ]]; then

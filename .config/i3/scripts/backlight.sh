@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-xbacklight "$@"
+acpilight "$@"
 pkill -RTMIN+2 i3blocks

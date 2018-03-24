@@ -2,7 +2,7 @@
 
 # res=$(rofi -dmenu -p "menu:" -bw 0 -bc "#f3f4f5" -bg "#f3f4f5" -fg "#2f343f" -hlbg "#2f343f" -hlfg "#f3f4f5" -separator-style none -location 0 -width 250 -hide-scrollbar -padding 30 -font "System San Francisco Display 18" < /home/khoaduccao/.config/dmenu)
 # res=$(echo "lock;reload;restart;logout;suspend;shutdown" | rofi -sep ";" -dmenu -p "power:" -bw 0 -bc "#f3f4f5" -bg "#f3f4f5" -fg "#2f343f" -hlbg "#2f343f" -hlfg "#f3f4f5" -separator-style none -location 0 -width 250 -hide-scrollbar -padding 30)
-res=$(echo "lock;reload;restart;logout;suspend;shutdown" | rofi -sep ";" -dmenu -p "power:" -location 0 -width 250 -padding 30)
+res=$(echo "lock;reload;restart;logout;suspend;shutdown" | rofi -sep ";" -dmenu -p "power:" -location 0 -width 250 -padding 30 -lines 6)
 
 if [ $res = "lock" ]; then
     ~/.config/i3/i3-lock/lock
