@@ -1,0 +1,1 @@
+/usr/lib/vim-command-t/ruby/command-t/scm_utilities.rb

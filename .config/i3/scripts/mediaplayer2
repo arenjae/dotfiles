@@ -35,8 +35,8 @@ state=$(playerctl status)
 if [[ "$title" ]]; then
     # Make icon mapping
     declare -A icons
-    icons["Playing"]=""
-    icons["Paused"]=""
+    icons["Playing"]=""
+    icons["Paused"]=""
     icons["Stopped"]=""
 
     # Determine which icon to use

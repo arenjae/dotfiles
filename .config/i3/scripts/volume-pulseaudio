@@ -9,8 +9,8 @@ AUDIO_MED_SYMBOL=''
 AUDIO_LOW_THRESH=0
 AUDIO_LOW_SYMBOL=''
 
-#AUDIO_MUTED_SYMBOL=''
-AUDIO_MUTED_SYMBOL='.'
+AUDIO_MUTED_SYMBOL=''
+# AUDIO_MUTED_SYMBOL='.'
 
 DEFAULT_COLOR="#ebdbb2"
 #MUTED_COLOR="#a0a0a0"
@@ -98,8 +98,8 @@ function print_format {
         1) echo "$SYMBOL  $VOL$PERCENT [$NAME]" ;;
         2) echo "$SYMBOL  $VOL$PERCENT [$INDEX]";;
         3) echo "$SYMBOL  $VOL$PERCENT" ;;
-        #*) echo "$SYMBOL$VOL$PERCENT [$INDEX:$NAME]" ;;
-        *) echo "$SYMBOL  $VOL$PERCENT" ;;
+        *) echo "$SYMBOL  $VOL$PERCENT ($NAME)" ;;
+        # *) echo "$SYMBOL  $VOL$PERCENT" ;;
     esac
 }
 

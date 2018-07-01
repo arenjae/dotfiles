@@ -10,17 +10,17 @@ URGENT_VALUE=9
 # Scroll up
 if [[ "${BLOCK_BUTTON}" -eq 4 ]]; then
   if [[ "${test2}" -ge 10 ]]; then #prevents user from turning off screen on accident
-    acpilight -dec 5
+    acpilight -dec 5 -fps 200
   fi
 #Scroll down
 elif [[ "${BLOCK_BUTTON}" -eq 5 ]]; then
-  acpilight -inc 5
+  acpilight -inc 5 -fps 200
 # Left click
 elif [[ "${BLOCK_BUTTON}" -eq 3 ]]; then
-  acpilight -dec 1
+  acpilight -dec 1 -fps 200
 # Right click
 elif [[ "${BLOCK_BUTTON}" -eq 1 ]]; then
-  acpilight -inc 1
+  acpilight -inc 1 -fps 200
 fi
 
 

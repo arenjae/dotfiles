@@ -1,0 +1,1 @@
+/usr/lib/vim-command-t/ruby/command-t/scanner/file_scanner/find_file_scanner.rb

@@ -1,9 +1,3 @@
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
 #
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
@@ -19,7 +13,6 @@ font pango:Hack, FontAwesome 10
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up l
 set $down k
@@ -44,8 +37,8 @@ set $white       #ebdbb2
 set $gray        #454545
 set $black       #282828
 set $darkblack   #1d2021
-set $transparent #00000090
-set $colortrans  #0F000090
+set $transparent #00000099
+set $colortrans  #0F000099
 set $darktrans   #0000000F
 
 set $height 40
@@ -54,7 +47,7 @@ workspace_auto_back_and_forth yes
 set $ws1 1 <span foreground="pink">1: </span>
 set $ws2 2 <span foreground="white">2: </span>
 set $ws3 3 <span foreground="orange">3: </span>
-set $ws4 4 <span foreground="yellow">4: </span>
+set $ws4 4 <span foreground="yellow">4: </span>
 set $ws5 5 <span foreground="lightblue">5: </span>
 set $ws6 6 6: 
 set $ws7 7 7: 
@@ -190,8 +183,8 @@ bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN
 bindsym XF86KbdBrightnessUp exec /usr/local/bin/kb-light.py +
 bindsym XF86KbdBrightnessDown exec /usr/local/bin/kb-light.py -
 
-bindsym XF86MonBrightnessDown exec --no-startup-id ${HOME}/.config/i3/scripts/backlight.sh -dec 10
-bindsym XF86MonBrightnessUp exec --no-startup-id ${HOME}/.config/i3/scripts/backlight.sh -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id ${HOME}/.config/i3/scripts/backlight.sh -dec 10 -fps 200
+bindsym XF86MonBrightnessUp exec --no-startup-id ${HOME}/.config/i3/scripts/backlight.sh -inc 10 -fps 200
 
 
 # new_window none
@@ -230,16 +223,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym $left       resize shrink width 5 px or 5 ppt
-        bindsym $down       resize grow height 5 px or 5 ppt
-        bindsym $up         resize shrink height 5 px or 5 ppt
-        bindsym $right      resize grow width 5 px or 5 ppt
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 5 px or 5 ppt
-        bindsym Down        resize grow height 5 px or 5 ppt
-        bindsym Up          resize shrink height 5 px or 5 ppt
-        bindsym Right       resize grow width 5 px or 5 ppt
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -251,14 +244,14 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-    status_command i3blocks
+    	status_command i3blocks
 	i3bar_command i3bar -t
 	position top
 	font pango:Consolas, FontAwesome 9
 	strip_workspace_numbers yes
 	separator_symbol "■"
 	tray_padding 2
-    	height $height
+	height $height
     	
 	colors {
         	statusline         $white
@@ -266,7 +259,7 @@ bar {
         	separator          $darkyellow
             
 #                          		BORDER       BACKGROUND   TEXT
-        	focused_workspace  $white     $transparent    $white	
+        	focused_workspace  $white        $transparent $white	
         	inactive_workspace $transparent  $transparent $white
         	active_workspace   $transparent  $transparent $white
         	urgent_workspace   $darkred      $darkred     $transparent
@@ -283,13 +276,12 @@ bar {
 #######################################################################
 exec xrandr --output HDMI-1 --right-of eDP-1
 exec --no-startup-id feh --bg-fill /home/rjohnson/Pictures/a.jpg
-exec --no-startup-id compton -b 
-# exec --no-startup-id gnome-settings-daemon
+exec --no-startup-id compton --blur-method kawase --backend glx --blur-strength 5
 # exec --no-startup-id setxkbmap gb,us -option 'grp:alt_shift_toggle'
 exec --no-startup-id nm-applet &
 exec --no-startup-id blueman-applet &
 exec --no-startup-id redshift-gtk -t 5500K:3700K &
-exec --no-startup-id dunst &
+exec_always --no-startup-id dunst &
 exec --no-startup-id spotify --force-device-scale-factor=2 &
 exec --no-startup-id hipchat4 &
 exec /usr/bin/numlockx on
@@ -303,4 +295,6 @@ exec --no-startup-id xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput T
 exec --no-startup-id xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec --no-startup-id xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Natural Scrolling Enabled Default" 1
 
+exec --no-startup-id xinput set-prop "DLL07BE:01 06CB:7A13 Touchpad" "libinput Accel Speed" 0.8
+exec setxkbmap -option ctrl:nocaps
 exec_always --no-startup-id "pgrep --exact xev || xev -root -event randr | grep --line-buffered ScreenChangeNotify | while read change; do pkill -RTMIN+4 i3blocks; done"

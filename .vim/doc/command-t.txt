@@ -1,0 +1,1 @@
+/usr/lib/vim-command-t/doc/command-t.txt
